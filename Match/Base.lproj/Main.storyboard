@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Match" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,128 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="q39-Hc-NfU">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <animations/>
+                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujb-3b-Pet" userLabel="Card Scrollview">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tyg-WR-tsL" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <animations/>
+                                        <variation key="heightClass=compact" ambiguous="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="510" height="0.0"/>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstItem="tyg-WR-tsL" firstAttribute="leading" secondItem="ujb-3b-Pet" secondAttribute="leading" id="1XL-Ev-qcd"/>
+                                    <constraint firstItem="tyg-WR-tsL" firstAttribute="width" secondItem="ujb-3b-Pet" secondAttribute="width" id="Vle-jb-mir"/>
+                                    <constraint firstAttribute="trailing" secondItem="tyg-WR-tsL" secondAttribute="trailing" id="X2X-mk-G2Z"/>
+                                    <constraint firstItem="tyg-WR-tsL" firstAttribute="top" secondItem="ujb-3b-Pet" secondAttribute="top" id="dGr-aJ-V1E"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="510" id="jb1-6S-bUQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="tyg-WR-tsL" secondAttribute="bottom" id="v8c-2V-RHJ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="tyg-WR-tsL"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="jb1-6S-bUQ"/>
+                                        <exclude reference="1XL-Ev-qcd"/>
+                                        <exclude reference="Vle-jb-mir"/>
+                                        <exclude reference="X2X-mk-G2Z"/>
+                                        <exclude reference="dGr-aJ-V1E"/>
+                                        <exclude reference="v8c-2V-RHJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" ambiguous="YES">
+                                    <rect key="frame" x="45" y="20" width="510" height="380"/>
+                                    <mask key="subviews">
+                                        <include reference="tyg-WR-tsL"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="jb1-6S-bUQ"/>
+                                        <include reference="1XL-Ev-qcd"/>
+                                        <include reference="Vle-jb-mir"/>
+                                        <include reference="X2X-mk-G2Z"/>
+                                        <include reference="dGr-aJ-V1E"/>
+                                        <include reference="v8c-2V-RHJ"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbX-Mo-1Ah">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q39-Hc-NfU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Obw-14-Ix9"/>
+                            <constraint firstItem="fbX-Mo-1Ah" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Uh6-am-zkg"/>
+                            <constraint firstItem="fbX-Mo-1Ah" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="5" id="bAD-KK-fuT"/>
+                            <constraint firstAttribute="bottom" secondItem="q39-Hc-NfU" secondAttribute="bottom" id="ezp-lh-QRg"/>
+                            <constraint firstItem="ujb-3b-Pet" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kjQ-sy-Me4"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ujb-3b-Pet" secondAttribute="bottom" id="lbv-MF-wI7"/>
+                            <constraint firstAttribute="trailing" secondItem="q39-Hc-NfU" secondAttribute="trailing" id="n8T-aV-NXQ"/>
+                            <constraint firstItem="q39-Hc-NfU" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nCu-YC-kO0"/>
+                            <constraint firstItem="ujb-3b-Pet" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="neV-eq-rf0"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="q39-Hc-NfU"/>
+                                <exclude reference="ujb-3b-Pet"/>
+                                <exclude reference="fbX-Mo-1Ah"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Obw-14-Ix9"/>
+                                <exclude reference="ezp-lh-QRg"/>
+                                <exclude reference="n8T-aV-NXQ"/>
+                                <exclude reference="nCu-YC-kO0"/>
+                                <exclude reference="Uh6-am-zkg"/>
+                                <exclude reference="bAD-KK-fuT"/>
+                                <exclude reference="kjQ-sy-Me4"/>
+                                <exclude reference="neV-eq-rf0"/>
+                                <exclude reference="lbv-MF-wI7"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="q39-Hc-NfU"/>
+                                <include reference="ujb-3b-Pet"/>
+                                <include reference="fbX-Mo-1Ah"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Obw-14-Ix9"/>
+                                <include reference="ezp-lh-QRg"/>
+                                <include reference="n8T-aV-NXQ"/>
+                                <include reference="nCu-YC-kO0"/>
+                                <include reference="Uh6-am-zkg"/>
+                                <include reference="bAD-KK-fuT"/>
+                                <include reference="kjQ-sy-Me4"/>
+                                <include reference="neV-eq-rf0"/>
+                                <include reference="lbv-MF-wI7"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="cardScrollview" destination="ujb-3b-Pet" id="Pva-ZD-ksO"/>
+                        <outlet property="contentView" destination="tyg-WR-tsL" id="on4-cl-LWG"/>
+                        <outlet property="countdownLabel" destination="fbX-Mo-1Ah" id="egr-Ym-gOj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="736" height="414"/>
+    </resources>
 </document>
